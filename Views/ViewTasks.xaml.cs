@@ -1,28 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WPF_JCastro_TaskManager.Models;
+using TaskModel = WPF_JCastro_TaskManager.Models.Task;
 
 namespace WPF_JCastro_TaskManager.Views
 {
-    /// <summary>
-    /// Lógica de interacción para ViewTasks.xaml
-    /// </summary>
     public partial class ViewTasks : UserControl
     {
+        private static ObservableCollection<TaskModel> tasks = new ObservableCollection<TaskModel>();
+
         public ViewTasks()
         {
             InitializeComponent();
+            TasksListBox.ItemsSource = tasks;
+            AddTasks.TaskAdded += OnTaskAdded;
+        }
+
+        private void OnTaskAdded(TaskModel newTask)
+        {
+            tasks.Add(newTask);
         }
     }
 }

@@ -1,28 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WPF_JCastro_TaskManager.Models;
+using TaskModel = WPF_JCastro_TaskManager.Models.Task;
 
 namespace WPF_JCastro_TaskManager.Views
 {
-    /// <summary>
-    /// Lógica de interacción para AddTasks.xaml
-    /// </summary>
     public partial class AddTasks : UserControl
     {
+        public static event Action<TaskModel> TaskAdded;
         public AddTasks()
         {
             InitializeComponent();
+        }
+
+        private void AddTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            string name = TaskNameTextBox.Text;
+            string description = TaskDescriptionTextBox.Text;
+            DateTime date = TaskDatePicker.SelectedDate ?? DateTime.Now;
+
+            if (!string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(description))
+            {
+                TaskModel newTask = new TaskModel(name, description, date);
+                TaskAdded?.Invoke(newTask);
+
+                TaskNameTextBox.Clear();
+                TaskDescriptionTextBox.Clear();
+                TaskDatePicker.SelectedDate = null;
+
+                MessageBox.Show("Tarea agregada con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+            }
         }
     }
 }

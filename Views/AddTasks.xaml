@@ -2,9 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
-        <TextBlock Text="Agregar Nueva Tarea"
-                   FontSize="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center" />
+        <StackPanel Margin="10">
+            <TextBlock Text="Nombre de la Tarea" FontWeight="Bold"/>
+            <TextBox x:Name="TaskNameTextBox" Margin="0,0,0,10"/>
+            <TextBlock Text="Descripción" FontWeight="Bold"/>
+            <TextBox x:Name="TaskDescriptionTextBox" Margin="0,0,0,10"/>
+            <TextBlock Text="Día" FontWeight="Bold"/>
+            <DatePicker x:Name="TaskDatePicker" Margin="0,0,0,10"/>
+            <Button Content="Agregar Tarea" Click="AddTaskButton_Click"/>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -3,9 +3,6 @@ using WPF_JCastro_TaskManager.Views;
 
 namespace WPF_JCastro_TaskManager
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -26,6 +23,11 @@ namespace WPF_JCastro_TaskManager
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             MainContentControl.Content = new Settings();
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

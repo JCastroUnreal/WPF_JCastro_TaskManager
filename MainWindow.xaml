@@ -18,6 +18,17 @@
             </Grid.ColumnDefinitions>
             <StackPanel Background="#181118"
                     Width="230">
+                <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        Grid.Row="0"
+                        Margin="10">
+                    <Button Content="X"
+                            Padding="5,1,5,1"
+                            Click="CloseButton_Click"
+                            Background="#F83249"
+                            Foreground="Black"
+                            FontWeight="Bold"/>
+                </StackPanel>
                 <TextBlock Style="{StaticResource menuTitle}"
                        Text="MENU" />
                 <Button Style="{StaticResource menuButton}"
