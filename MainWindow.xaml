@@ -1,0 +1,63 @@
+﻿<Window x:Class="WPF_JCastro_TaskManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="MainWindow"
+        Height="600"
+        Width="800"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None">
+    <Border CornerRadius="40"
+            Background="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="#181118"
+                    Width="230">
+                <TextBlock Style="{StaticResource menuTitle}"
+                       Text="MENU" />
+                <Button Style="{StaticResource menuButton}"
+                    Click="ViewTasks_Click"
+                    Background="#831A61"
+                    Foreground="White">
+                    <Grid>
+                        <TextBlock Text="Ver Tareas"
+                               Margin="0 0 0 2"
+                               FontWeight="Bold"/>
+                        <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"
+                                           Visibility="Visible"/>
+                    </Grid>
+                </Button>
+                <Button Style="{StaticResource menuButton}"
+                    Click="AddTasks_Click"
+                    Background="#831A61"
+                    Foreground="White">
+                    <Grid>
+                        <TextBlock Text="Agregar Tareas"
+                               Margin="0 0 0 2"
+                               FontWeight="Bold"/>
+                        <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"
+                                           Visibility="Visible"/>
+                    </Grid>
+                </Button>
+                <Button Style="{StaticResource menuButton}"
+                    Click="Settings_Click"
+                    Background="#831A61"
+                    Foreground="White">
+                    <Grid>
+                        <TextBlock Text="Configuración"
+                               Margin="0 0 0 2"
+                               FontWeight="Bold"/>
+                        <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"
+                       Visibility="Visible"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+            <ContentControl x:Name="MainContentControl" Grid.Column="1" />
+        </Grid>
+    </Border>
+</Window>
