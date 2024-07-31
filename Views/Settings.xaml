@@ -2,9 +2,17 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
-        <TextBlock Text="Configuración"
-                   FontSize="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center" />
+        <Border Style="{DynamicResource border}">
+            <StackPanel>
+                <ComboBox x:Name="ThemeComboBox"
+                          Style="{DynamicResource comboBox}"
+                          SelectionChanged="ThemeComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Dark Theme"
+                                  Tag="Dark" />
+                    <ComboBoxItem Content="Light Theme"
+                                  Tag="Light" />
+                </ComboBox>
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

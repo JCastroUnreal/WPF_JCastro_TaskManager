@@ -8,67 +8,69 @@
         ResizeMode="NoResize"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStyle="None">
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
     <Border CornerRadius="40"
-            Background="White">
+            Background="{DynamicResource App_Background}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="230" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <StackPanel Background="#181118"
-                    Width="230">
+            <StackPanel Background="{DynamicResource Menu_Background}"
+                        Width="230">
                 <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Left"
-                        Grid.Row="0"
-                        Margin="10">
-                    <Button Content="X"
-                            Padding="5,1,5,1"
-                            Click="CloseButton_Click"
-                            Background="#F83249"
-                            Foreground="Black"
-                            FontWeight="Bold"/>
+                            HorizontalAlignment="Left"
+                            Grid.Row="0"
+                            Margin="10">
+                    <Button Style="{DynamicResource CloseButton}"
+                            Content="X"
+                            Click="CloseButton_Click" />
                 </StackPanel>
                 <TextBlock Style="{StaticResource menuTitle}"
-                       Text="MENU" />
+                           Text="MENU" />
                 <Button Style="{StaticResource menuButton}"
-                    Click="ViewTasks_Click"
-                    Background="#831A61"
-                    Foreground="White">
+                        Click="ViewTasks_Click"
+                        x:Name="ViewTasks_Button"
+                        MouseEnter="GenericButton_MouseEnter"
+                        MouseLeave="GenericButton_MouseLeave">
                     <Grid>
                         <TextBlock Text="Ver Tareas"
-                               Margin="0 0 0 2"
-                               FontWeight="Bold"/>
-                        <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"
-                                           Visibility="Visible"/>
+                                   Margin="0 0 0 2"
+                                   FontWeight="Bold" />
+                        <Icon:PackIconMaterial Name="ArrowIcon"
+                                               Style="{StaticResource menuButtonIcon}"
+                                               Visibility="Visible" />
                     </Grid>
                 </Button>
                 <Button Style="{StaticResource menuButton}"
-                    Click="AddTasks_Click"
-                    Background="#831A61"
-                    Foreground="White">
+                        Click="AddTasks_Click"
+                        MouseEnter="GenericButton_MouseEnter"
+                        MouseLeave="GenericButton_MouseLeave">
                     <Grid>
                         <TextBlock Text="Agregar Tareas"
-                               Margin="0 0 0 2"
-                               FontWeight="Bold"/>
+                                   Margin="0 0 0 2"
+                                   FontWeight="Bold" />
                         <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"
-                                           Visibility="Visible"/>
+                                               Visibility="Visible" />
                     </Grid>
                 </Button>
                 <Button Style="{StaticResource menuButton}"
-                    Click="Settings_Click"
-                    Background="#831A61"
-                    Foreground="White">
+                        Click="Settings_Click"
+                        MouseEnter="GenericButton_MouseEnter"
+                        MouseLeave="GenericButton_MouseLeave">
                     <Grid>
                         <TextBlock Text="Configuración"
-                               Margin="0 0 0 2"
-                               FontWeight="Bold"/>
+                                   Margin="0 0 0 2"
+                                   FontWeight="Bold" />
                         <Icon:PackIconMaterial Style="{StaticResource menuButtonIcon}"
-                       Visibility="Visible"/>
+                                               Visibility="Visible" />
                     </Grid>
                 </Button>
             </StackPanel>
-            <ContentControl x:Name="MainContentControl" Grid.Column="1" />
+            <ContentControl x:Name="MainContentControl"
+                            Grid.Column="1" />
         </Grid>
     </Border>
 </Window>

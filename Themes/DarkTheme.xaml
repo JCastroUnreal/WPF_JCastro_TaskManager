@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#231523"
+                     x:Key="App_Background" />
+    <SolidColorBrush Color="#181118"
+                     x:Key="Menu_Background" />
+    <SolidColorBrush Color="#2B1A24"
+                     x:Key="Items_Background" />
+    <SolidColorBrush Color="#A090A0"
+                     x:Key="Title_Foreground" />
+    <SolidColorBrush Color="#9F339F"
+                     x:Key="List_Item_Title_Foreground" />
+    <SolidColorBrush Color="#C43F8A"
+                     x:Key="List_Item_Foreground" />
+    <SolidColorBrush Color="White"
+                     x:Key="Button_Foreground" />
+    <SolidColorBrush Color="Transparent"
+                     x:Key="Button_Background" />
+    <SolidColorBrush Color="#831A61"
+                     x:Key="Button_Hover_Background" />
+    <SolidColorBrush Color="#831A61"
+                     x:Key="Button_Normal_Background" />
+    <SolidColorBrush Color="#F83249"
+                     x:Key="Button_Close_Background" />
+    <SolidColorBrush Color="AliceBlue"
+                     x:Key="Button_Close_Foreground" />
+    
+</ResourceDictionary>

@@ -1,15 +1,24 @@
-﻿<UserControl
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="WPF_JCastro_TaskManager.Views.ViewTasks"
-             >
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="av"
+             x:Class="WPF_JCastro_TaskManager.Views.ViewTasks">
     <Grid>
-        <ListBox x:Name="TasksListBox" Margin="10" av:ItemsSource="{av:SampleData ItemCount=5}">
+        <ListBox x:Name="TasksListBox"
+                 Style="{StaticResource listBox}"
+                 av:ItemsSource="{av:SampleData ItemCount=1}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">
-                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Description}"/>
-                        <TextBlock Text="{Binding Date}" FontStyle="Italic"/>
+                        <TextBlock Text="{Binding Name}"
+                                   Style="{StaticResource listItemTitle}"
+                                   FontWeight="Bold" />
+                        <TextBlock Text="{Binding Description}"
+                                   Style="{StaticResource listItem}"/>
+                        <TextBlock Text="{Binding Date}"
+                                   Style="{StaticResource listItem}"
+                                   FontStyle="Italic" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
